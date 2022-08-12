@@ -15,37 +15,33 @@ In this lab, you're going to build the front-end for a digital grocery store! Us
 
 ### Part One: Display the Items
 
-Before starting, look at the `App.js` file, and pay special attention to the components used - looks like it only has three so far: `<Hero />`, `<ProductList />`, and `<ShoppingCart />`. However, you'll notice that there's also another component in the `components` folder called `Product.tsx`. That component will be used not as a child component of the `App`, but as its grandchild component instead. So for this first part of the lab we'll be developing mostly in the `ProductList.tsx` file, where we can insert some `<Product />` components, and in the `Product.tsx` file, where we can make that product more interactive and configurable.
+Before starting, look at the `App.js` file, and pay special attention to the components used - looks like it only has three so far: `<Hero />`, `<ProductList />`, and `<ShoppingCart />`. However, you'll notice that there's also another component in the `components` folder called `Product.jsx`. That component will be used not as a child component of the `App`, but as its grandchild component instead. So for this first part of the lab we'll be developing mostly in the `ProductList.jsx` file, where we can insert some `<Product />` components, and in the `Product.jsx` file, where we can make that product more interactive and configurable.
 
 ###### Core features:
 
-1. In `productList.tsx`, Replace the placeholder text with at least one `<Product />` component.
+1. In `productList.jsx`, Replace the placeholder text with at least one `<Product />` component.
 2. The `ProductList` component has a prop called `inventory`, but right now it's typed with `any`, which is not ideal. Type it correctly.
-3. Pass the first string in that inventory array down to the first `<Product />` component as a prop (called something like `name`), and then go display the product name as part of the `Product` component in the `product.tsx` file.
+3. Pass the first string in that inventory array down to the first `<Product />` component as a prop (called something like `name`), and then go display the product name as part of the `Product` component in the `product.jsx` file.
 4. Using a similar strategy as in step 2, try to display that price on the product. You'll need to also figure out the best way to display the price formatted in human-readable currency, since the price itself is in cents.
 5. Add two more instances of the <Product/> component to complete this for all three of the products in our starting inventory.
 6. Doing this manually is pretty tedious, and would be impossible if we had 100 or so items. Use a `.map()` method to display all the items instead.
 
 ### Part Two: Create the add-remove functions
 
-This app doesn't have redux added to it yet. You'll need to manage the state of the user's `cart` in a redux store.
+This app doesn't have any state added to it yet. You'll need to manage the state of the user's `cart` at the `App` level so that both the left hand summary AND the individual items can use and manipulate the state.
 
 ###### Core features:
 
-1. Add a provider to the application.
-2. Create a redux folder and create a store. Export it and add it to your provider as a prop.
-3. Create a reducer and include it in your `createStore`.
-4. Create an initial state and pass it as a default argument. How you structure your state is largely up to you, but if you'd like to match the solutions branch, you'll want to use this example:
+1.
 
 ```js
-const initialState = {
-  cart: [
+const exampleStartingCart = [
     {
       product: {
         name: "Apple",
         priceInCents: 199,
         productID: "a1582",
-      } as InventoryItem,
+      },
       qty: 1,
     },
     {
@@ -53,7 +49,7 @@ const initialState = {
         name: "Loaf of Bread",
         priceInCents: 150,
         productID: "b2693",
-      } as InventoryItem,
+      },
       qty: 1,
     },
     {
@@ -61,11 +57,11 @@ const initialState = {
         name: "Milk",
         priceInCents: 250,
         productID: "m3704",
-      } as InventoryItem,
+      },
       qty: 1,
     },
   ],
-};
+
 ```
 
 5. Configure the add button to dispatch actions that will add the designated item from your cart.
