@@ -1,8 +1,6 @@
-import styled from "styled-components";
-
-export const AppRoot = styled.div`
+.AppRoot {
   display: grid;
   grid-template-columns: 275px auto;
   grid-template-rows: 156px auto;
   min-height: 100vh;
-`;
+}

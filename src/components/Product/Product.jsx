@@ -1,11 +1,11 @@
-import { ButtonGroup, ProductRoot } from "./Product.styles";
+import "Product.css";
 
 const Product = () => {
   return (
-    <ProductRoot>
+    <div className="ProductRoot">
       <h2>NAME</h2>
       <h3>$$PRICE</h3>
-      <ButtonGroup>
+      <div className="ButtonGroup">
         <button
           onClick={() => {
             console.log("add button test");
@@ -14,8 +14,8 @@ const Product = () => {
           Add
         </button>
         <button>Remove</button>
-      </ButtonGroup>
-    </ProductRoot>
+      </div>
+    </div>
   );
 };
 

@@ -2,17 +2,17 @@ import Hero from "../Hero/Hero";
 import ProductList from "../ProductList/ProductList";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import { inventory } from "../../utils";
-import { AppRoot } from "./App.styles";
+import "./App.css";
 
 const App = () => {
   return (
-    <AppRoot>
+    <div className="AppRoot">
       <Hero />
       <ShoppingCart />
       <div>
         <ProductList inventory={inventory} />
       </div>
-    </AppRoot>
+    </div>
   );
 };
 

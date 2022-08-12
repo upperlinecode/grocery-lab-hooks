@@ -1,19 +1,17 @@
-import styled from "styled-components";
-
-export const ShoppingCartRoot = styled.div`
+.ShoppingCartRoot {
   background-color: #eee;
   padding: 15px 30px;
-`;
+}
 
-export const CartItem = styled.div`
+.CartItem {
   line-height: 6px;
   display: flex;
   justify-content: space-between;
-`;
+}
 
-export const ItemGroup = styled.span`
+.ItemGroup {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 4px;
-`;
+}
