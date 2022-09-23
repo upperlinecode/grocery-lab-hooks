@@ -13,6 +13,8 @@ In this lab, you're going to build the front-end for a digital grocery store! Us
 
 ## The Lab
 
+> Note: to do this lab in TypeScript, change each `.jsx` extension to `.tsx` and add types where necessary. 
+
 ### Part One: Display the Items
 
 Before starting, look at the `App.js` file, and pay special attention to the components used - looks like it only has three so far: `<Hero />`, `<ProductList />`, and `<ShoppingCart />`. However, you'll notice that there's also another component in the `components` folder called `Product.jsx`. That component will be used not as a child component of the `App`, but as its grandchild component instead. So for this first part of the lab we'll be developing mostly in the `ProductList.jsx` file, where we can insert some `<Product />` components, and in the `Product.jsx` file, where we can make that product more interactive and configurable.
